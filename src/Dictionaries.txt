@@ -1,0 +1,31 @@
+Aback - Sửng sốt, ngạc nhiên
+Abacus - Bàn tính
+Abandon - bỏ rơi, bỏ hoang
+Abandoned - sa đoạ, phóng đãng
+Abate - làm giảm căng thẳng
+Absolute - hoàn toàn tuyệt đối
+Absolution - sự xá tội
+Absorb - hấp thụ
+Absorbent - có thể hút ẩm
+Abstain - kiêng nhịn
+Agriculture - Nông nghiệp
+Anthropology - Nhân chủng học
+Archaeology - Khảo cổ học
+Architecture - Kiến trúc xây dựng
+Biology - Sinh học
+Business management - Quản trị kinh doanh
+Chemistry - Hoá học
+Economics - Kinh tế học
+Geography - Địa lý
+History - Lịch sử
+Information technology - Công nghệ thông tin
+Literature - Văn học
+Math - toán học
+Physics - Vật lý
+Shadow - bóng
+Unique - Độc nhất
+cat - meo
+computer - may tính
+dog - chó
+merchant - Thương nhân
+sand - cat
