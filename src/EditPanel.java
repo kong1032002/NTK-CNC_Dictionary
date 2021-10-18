@@ -8,6 +8,7 @@ public class EditPanel extends TranslatePanel {
     private JPanel edit;
     private JLabel saveButton;
     private Word selectedWord;
+
     public EditPanel() {
         super();
         selectedWord = new Word();
@@ -18,12 +19,12 @@ public class EditPanel extends TranslatePanel {
         add(edit);
 
         targetLang = new JTextField("NTKong");
-        targetLang.setFont(font);
+        targetLang.setFont(CommonFunc.font);
         targetLang.setBounds(50, 20, CommonFunc.CANVAS_WIDTH - 100 , 50);
         edit.add(targetLang);
 
         sourceLang = new JTextField("Nguyễn Thành Công");
-        sourceLang.setFont(font);
+        sourceLang.setFont(CommonFunc.font);
         sourceLang.setBounds(50, 90, CommonFunc.CANVAS_WIDTH - 100, 50);
         edit.add(sourceLang);
         edit_word();
@@ -44,7 +45,7 @@ public class EditPanel extends TranslatePanel {
                 super.mousePressed(e);
                 if (management.deleteData(dictionary, selectedWord)) {
                     management.addData(dictionary, new Word(targetLang.getText(), sourceLang.getText()));
-                    management.dictionaryExportToFile(dictionary.words);
+                    management.dictionaryExportToFile(dictionary);
                 }
                 ImageIcon imageIcon = new ImageIcon(String.format("Icon//%s_Pressed.png", name));
                 Image imageScale = imageIcon.getImage().getScaledInstance(CommonFunc.BUTTON_WIDTH, CommonFunc.BUTTON_HEIGHT, Image.SCALE_SMOOTH);

@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class CommonFunc {
     public static final int WIDTH = 1280;
     public static final int HEIGHT = 720;
@@ -6,4 +8,6 @@ public class CommonFunc {
     public static final int BUTTON_WIDTH = 250;
     public static final int BUTTON_HEIGHT = 80;
     public static final int NUMBER_BUTTON = 4;
+    public static final Font font = new Font("Arial", Font.PLAIN, 20);
+
 }

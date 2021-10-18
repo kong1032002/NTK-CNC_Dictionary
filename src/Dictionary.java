@@ -4,13 +4,15 @@ import java.util.List;
 public class Dictionary {
     public ArrayList<Word> words = new ArrayList<>();
     public DictionaryCommandline commandline;
+    public DictionaryManagement management;
     public Dictionary() {
-        commandline = new DictionaryCommandline();
+//        commandline = new DictionaryCommandline();
+//        management = new DictionaryManagement();
+//        this.addWord(management.insertFromFile());
     }
 
     //thêm và sắp xếp luôn danh sách từ
     public void addWord(Word newWord) {
-        //words.add(newWord);
         if (words.size() == 0) {
             words.add(newWord);
         } else {

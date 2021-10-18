@@ -7,25 +7,22 @@ public class AddRemovePanel extends TranslatePanel {
     private JPanel addRemove;
     private JTextField targetLang, sourceLang;
     private JLabel addButton, removeButton;
-    private Word selectedWord;
     public AddRemovePanel() {
         super();
 
-        selectedWord = new Word();
-        
         addRemove = new JPanel();
         addRemove.setBounds(0, CommonFunc.CANVAS_WIDTH / 2 - 150, CommonFunc.CANVAS_WIDTH, CommonFunc.CANVAS_HEIGHT / 2);
         addRemove.setBackground(ColorManagement.tab);
         addRemove.setLayout(null);
         add(addRemove);
 
-        targetLang = new JTextField("NTKong");
-        targetLang.setFont(font);
+        targetLang = new JTextField();
+        targetLang.setFont(CommonFunc.font);
         targetLang.setBounds(50, 20, CommonFunc.CANVAS_WIDTH - 100 , 50);
         addRemove.add(targetLang);
 
-        sourceLang = new JTextField("Nguyễn Thành Công");
-        sourceLang.setFont(font);
+        sourceLang = new JTextField();
+        sourceLang.setFont(CommonFunc.font);
         sourceLang.setBounds(50, 90, CommonFunc.CANVAS_WIDTH - 100, 50);
         addRemove.add(sourceLang);
 
@@ -55,8 +52,8 @@ public class AddRemovePanel extends TranslatePanel {
                     management.addData(dictionary, word);
                 } else {
                     management.deleteData(dictionary, word);
-                }
-                management.dictionaryExportToFile(dictionary.words);
+                };
+                management.dictionaryExportToFile(dictionary);
                 ImageIcon imageIcon = new ImageIcon(String.format("Icon//%s_Pressed.png", name));
                 Image imageScale = imageIcon.getImage().getScaledInstance(CommonFunc.BUTTON_WIDTH, CommonFunc.BUTTON_HEIGHT, Image.SCALE_SMOOTH);
                 button.setIcon(new ImageIcon(imageScale));
@@ -98,7 +95,6 @@ public class AddRemovePanel extends TranslatePanel {
                     enJlist.setSelectedIndex(vnJlist.getSelectedIndex());
                     targetLang.setText((enJlist.getSelectedValue()));
                     sourceLang.setText(vnJlist.getSelectedValue());
-                    selectedWord = new Word(targetLang.getText(), sourceLang.getText());
                 }
             }
         });
@@ -108,9 +104,8 @@ public class AddRemovePanel extends TranslatePanel {
                     System.out.println(-1);
                 } else {
                     vnJlist.setSelectedIndex(enJlist.getSelectedIndex());
-                    sourceLang.setText((vnJlist.getSelectedValue().toString()));
+                    sourceLang.setText((vnJlist.getSelectedValue()));
                     targetLang.setText(enJlist.getSelectedValue());
-                    selectedWord = new Word(targetLang.getText(), sourceLang.getText());
                 }
             }
         });

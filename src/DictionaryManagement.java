@@ -81,19 +81,18 @@ public class DictionaryManagement {
     }
 
     //xuat du lieu ra file text
-    public void dictionaryExportToFile(ArrayList<Word> words){
+    public void dictionaryExportToFile(Dictionary dictionary){
         String url = "src\\Dictionaries.txt";
         File file = new File(url);
         try {
             FileOutputStream outputStream = new FileOutputStream(file);
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
-            for (Word word : words) {
+            for (Word word : dictionary.words) {
                 outputStreamWriter.write(word.getTarget() + " - " + word.getExplain());
                 outputStreamWriter.write("\n");
             }
             outputStreamWriter.flush();
-        } catch (IOException e) {
-
+        } catch (IOException ignored) {
         }
     }
 }

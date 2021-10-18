@@ -7,14 +7,15 @@ public class MainFrame extends JFrame implements ButtonPanel.ButtonListener {
     }
 
     private MyCanvas canvas;
-    private JPanel mainPanel, buttonPanel, translatePanel, editPanel, addRemovePanel;
+    private JPanel mainPanel, buttonPanel, translatePanel, editPanel, addRemovePanel, dictionaryPanel;
+    private Dictionary dictionary;
 
     public MainFrame() {
+
         setBounds(0,0, CommonFunc.WIDTH, CommonFunc.HEIGHT);
         setMinimumSize(new Dimension(CommonFunc.WIDTH, CommonFunc.HEIGHT));
         setMaximumSize(new Dimension(CommonFunc.WIDTH, CommonFunc.HEIGHT));
         setPreferredSize(new Dimension(CommonFunc.WIDTH, CommonFunc.HEIGHT));
-//        setLayout(null);
         setResizable(false);
         getContentPane().setBackground(ColorManagement.BACKGROUND);
         setTitle("Dictonary");
@@ -50,6 +51,12 @@ public class MainFrame extends JFrame implements ButtonPanel.ButtonListener {
         addRemovePanel.setVisible(false);
         mainPanel.add(addRemovePanel);
 
+        dictionaryPanel = new DictionaryPanel();
+        dictionaryPanel.setBounds(250, 80, CommonFunc.CANVAS_WIDTH, CommonFunc.CANVAS_HEIGHT);
+        dictionaryPanel.setBackground(ColorManagement.CANVAS_BACKGROUND);
+        dictionaryPanel.setVisible(false);
+        mainPanel.add(dictionaryPanel);
+
         canvas = new MyCanvas();
         canvas.setBounds(250, 80, CommonFunc.CANVAS_WIDTH, CommonFunc.CANVAS_HEIGHT);
         canvas.setFocusable(false);
@@ -64,20 +71,27 @@ public class MainFrame extends JFrame implements ButtonPanel.ButtonListener {
             case 0:
                 System.out.println("Translate");
                 editPanel.setVisible(false);
+                dictionaryPanel.setVisible(false);
                 addRemovePanel.setVisible(false);
                 translatePanel.setVisible(true);
                 break;
             case 1:
+                dictionaryPanel.setVisible(false);
                 addRemovePanel.setVisible(false);
                 translatePanel.setVisible(false);
                 editPanel.setVisible(true);
                 break;
             case 2:
+                dictionaryPanel.setVisible(false);
                 editPanel.setVisible(false);
                 translatePanel.setVisible(false);
                 addRemovePanel.setVisible(true);
                 break;
             case 3:
+                dictionaryPanel.setVisible(true);
+                editPanel.setVisible(false);
+                translatePanel.setVisible(false);
+                addRemovePanel.setVisible(false);
                 break;
         }
     }
